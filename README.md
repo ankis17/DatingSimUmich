@@ -1,3 +1,3 @@
-Umich Dating Sim
+
 
 # DatingSimUmich

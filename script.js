@@ -37,6 +37,7 @@ var resultView = new Vue({
     },
 
     goToMainMenu() {
+        this.settingsPanel = false;
       this.game_window = false;
       this.main_menu = true;
       this.current_scene = -1;

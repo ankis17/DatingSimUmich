@@ -1,41 +1,67 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <link rel="stylesheet" type="text/css" href="style.css">
-   <head>
-      <title> Umich Dating Sim </title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <!-- Optional theme -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-      </title>
-   </head>
-   <body >
-    
-     <div id='app'>
-    <div class="overall">
-      <nav class="navbar navbar-default">
-         <div class="container">
-            <div class="navbar-header">
-               <h3>Dating Simulation: Umich Edition</h3>
-            </div>
-         </div>
-      </nav>
-      <img class="settingsBtn" v-on:click="openSettings" src="images/settingsIcon.webp" />
-      <div class="settings" v-if="settingsPanel">
-        <button class="btn btn-primary btn-lg" id="insideSettings"> Resume</button>
-        <button class="btn btn-primary btn-lg" id="insideSettings"> Save</button>
-        <button class="btn btn-primary btn-lg" id="insideSettings"> Main Menu</button>
-      </div>
-      <div class="textBox">
-        <p><b>{{text}}</b></p>
-      </div>
-      </div>
-        
-  </div>
-    <script src="script.js"></script>
 
-   </body>
+<head>
+   <title> Umich Dating Sim </title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <!-- Optional theme -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+   </script>
+   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+   </title>
+</head>
+
+<body>
+
+   <div id='app'>
+      <div class="overall">
+         
+         <nav class="navbar navbar-default">
+            <div class="container">
+               <div class="navbar-header">
+                  <h3>Dating Simulation: Umich Edition</h3>
+               </div>
+            </div>
+         </nav>
+
+         
+         <div id="main_menu" v-if="main_menu">
+            <!-- <img id="main_menu_bg" src="https://live.staticflickr.com/8465/8443271796_2034d3e5ce_b.jpg"/> -->
+            <button class="btn btn-primary btn-lg" @click="startGame"> Start </button>
+            <button class="btn btn-primary btn-lg"> Load Game </button>
+         </div>
+
+         <div id="game_window" v-bind:style="{ backgroundImage: 'url(' + getBackgroundString() + ')' }" v-if="game_window">
+            <img class="settingsBtn" v-on:click="openSettings" src="images/settingsIcon.webp"/>
+
+            <div class="settings" v-if="settingsPanel">
+               <button class="btn btn-primary btn-lg" id="insideSettings" @click="closeSettings"> Resume </button>
+               <button class="btn btn-primary btn-lg" id="insideSettings"> Save </button>
+               <button class="btn btn-primary btn-lg" id="insideSettings" @click="goToMainMenu"> Main Menu </button>
+            </div>
+
+            <div class="story">
+               {{ scene[current_scene].story }}
+            </div>
+            
+            <div class="textBox" v-for="(item, index) in scene[current_scene].button">
+               <!-- <b>{{text}}</b> -->
+               <button class="btn btn-info btn-lg" id="" @click="goToScene(index)"> {{item.text}} </button>
+            </div>
+
+         </div>
+      </div>
+   </div>
+   <script src="script.js"></script>
+
+</body>
+
 </html>

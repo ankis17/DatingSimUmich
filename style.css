@@ -1,52 +1,82 @@
-
-
-h5{
+h5 {
     padding-bottom: 5px;
     padding-top: 3px;
 }
-.overall{
-    position: fixed;
+
+#main_menu {
+    position: sticky;
     background-image: url("https://live.staticflickr.com/8465/8443271796_2034d3e5ce_b.jpg");
+    background-size: cover;
     height: 100%;
     width: 100%;
 }
-.textBox{
+
+.story {
+    color: white;
+    width: 70%;
+    border-radius: 20px;
+    border: solid 2px white;
+    margin: 0 auto;
+    background: rgba(9, 72, 93, 0.5);
+    padding: 10px;
+    text-align: center;
+    margin-top: 250px;
+    z-index: -1;
+}
+
+.textBox {
     color: white;
     width: 50%;
     border-radius: 20px;
-    border:solid 2px white;
-    margin:0 auto;
-    background:rgba(9, 72, 93, 0.5);
+    border: solid 2px white;
+    margin: 0 auto;
+    background: rgba(9, 72, 93, 0.5);
     padding: 10px;
     text-align: center;
-    margin-top: 500px;
+    margin-top: 20px;
     z-index: -1;
-    
 }
 
-.settingsBtn{
-    border-radius:  10px;
-    background-color:rgb(191, 207, 212);;
+.settingsBtn {
+    border-radius: 10px;
+    background-color: rgb(191, 207, 212);
+    ;
     margin-left: 10px;
     height: 40px;
     width: 40px;
 }
-.settings{
+
+.settings {
     z-index: 100;
     width: 150px;
-  
-    background:rgba(202, 209, 107, 0.5);
+
+    background: rgba(202, 209, 107, 0.5);
     margin-left: 10px;
     margin-bottom: 20px;
 }
 
-#insideSettings{
-    
-
+#insideSettings {
     margin: 0 auto;
     margin-top: 70px;
     margin-bottom: 70px;
     margin-left: 15px;
-   
+}
 
+.overall {
+    position: fixed;
+    height: 720px;
+    width: 1280px;
+    background: #eee;
+    border: 1px solid #ccc;
+}
+
+/* #main_menu_bg {
+    position: static,
+} */
+
+#game_window {
+    position: relative;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }

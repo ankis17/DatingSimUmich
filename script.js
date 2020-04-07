@@ -8,8 +8,9 @@ var resultView = new Vue({
     main_menu: true,
     game_window: false,
     settingsPanel: false,
+    playerInfo: false,
 
-    background_img: ["images/0.jpg", "images/1.jpg", "images/2.jpg", "images/3.jpg"],
+    background_img: ["images/winter_diag.jpg", "images/1.jpg", "images/2.jpg", "images/3.jpg"],
 
     scene: [
       {background: 0, story: "this is scene 0", button: [{text: "go to 1", goto: 1}, {text: "go to 2", goto: 2}, {text: "go to 3", goto: 3}]},
@@ -31,9 +32,9 @@ var resultView = new Vue({
     },
 
     playerInfoPanel() {
-        this.main_menu = false;
-        this.playerInfo = true;
-        
+      console.log(this.playerInfo)
+      this.main_menu = false;
+      this.playerInfo = true;
     },
 
     startGame() {
@@ -43,15 +44,15 @@ var resultView = new Vue({
     },
 
     goToMainMenu() {
-        this.settingsPanel = false;
+      this.settingsPanel = false;
       this.game_window = false;
       this.main_menu = true;
       this.current_scene = -1;
     },
 
     getBackgroundString() {
-      return "'images/" + this.current_scene + ".jpg'";
-      // return "'" + this.background_img[this.current_scene] + "'";
+      // return "'images/" + this.current_scene + ".jpg'";
+      return "'" + this.background_img[this.current_scene] + "'";
     },
 
     goToScene(index) {

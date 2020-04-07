@@ -4,7 +4,7 @@ var resultView = new Vue({
     text: "any text",
     backgroundImgStr: "",
     playerImgStr: "",
-
+    playerName:"",
     main_menu: true,
     game_window: false,
     settingsPanel: false,
@@ -30,9 +30,15 @@ var resultView = new Vue({
       this.settingsPanel = false;
     },
 
+    playerInfoPanel() {
+        this.main_menu = false;
+        this.playerInfo = true;
+        
+    },
+
     startGame() {
-      this.main_menu = false;
       this.game_window = true;
+      this.playerInfo = false;
       this.current_scene = 0;
     },
 

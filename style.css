@@ -76,6 +76,26 @@
     position: static,
 } */
 
+#playerInfo{
+    background-image: url("images/umichbackground.jpg");
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    
+}
+#startButton{
+    margin-top: 20px;
+}
+#playerInputText{
+    color: white;
+    margin-top: 30px;
+    font-size: 40px;
+}
+#playerInput{
+    margin-top: 30px;
+    font-size: 40px;
+}
+
 #game_window {
     position: relative;
     background-size: cover;

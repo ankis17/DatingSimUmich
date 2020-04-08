@@ -9,6 +9,7 @@ var resultView = new Vue({
     game_window: false,
     settingsPanel: false,
     playerInfo: false,
+    textScrollSpeed: 15,
 
     background_img: ["images/winter_diag.jpg", "images/1.jpg", "images/2.jpg", "images/3.jpg"],
 
@@ -18,6 +19,10 @@ var resultView = new Vue({
       {background: 2, story: "this is scene 2", button: [{text: "go to 2", goto: 2}, {text: "go to 3", goto: 3}]},
       {background: 3, story: "this is scene 3, the final scene", is_final: true},
     ],
+
+    storyText: {
+      
+    },
 
     current_scene: -1,
 
@@ -59,6 +64,22 @@ var resultView = new Vue({
       console.log(index);
       console.log(this.scene[this.current_scene].button[index].goto);
       this.current_scene = this.scene[this.current_scene].button[index].goto;
+    },
+
+    typeWriter() {
+      let i = 0;
+      let txt = "Very Dramatic Story Here. According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible."
+      let curr_txt = "";
+      var addChars = setInterval(function() {
+        if (i < txt.length) {
+          curr_txt += txt.charAt(i);
+          $(".mainText").text(curr_txt);
+          i++;
+        }
+        else {
+          clearInterval(addChars);
+        }
+      }, this.textScrollSpeed)
     },
   }
 })

@@ -4,7 +4,7 @@ var resultView = new Vue({
     text: "any text",
     backgroundImgStr: "",
     playerImgStr: "",
-    playerName:"",
+    playerName:"Your Name Here",
     main_menu: true,
     game_window: false,
     settingsPanel: false,

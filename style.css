@@ -56,6 +56,19 @@
     margin-left: -350px;
 }
 
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+
+    border-left: 10px solid #d3d3d3;
+
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+
 .mainText{
     text-align: left;
     margin-top: 5px;
@@ -67,10 +80,31 @@
 .settingsBtn {
     border-radius: 10px;
     background-color: rgb(191, 207, 212);
-    margin-left: 10px;
+    margin-left: 7px;
+    margin-top: 7px;
     height: 40px;
     width: 40px;
     position: absolute;
+}
+
+.characterName {
+    position: absolute;
+    top: -34px;
+    left: 18px;
+    border-collapse: separate;
+
+    background: rgba(4, 46, 59, 0.85);
+    border-radius: 10px 10px 0px 0px;
+    border: solid 2px white;
+    z-index: 2;
+}
+
+.characterNameText {
+    position: relative;
+    text-align: center;
+    top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .settings {

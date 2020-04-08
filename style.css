@@ -1,3 +1,11 @@
+@font-face {
+    font-family: Univers;
+    src: url("Univers.woff#47");
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: condensed;
+}
+
 #app {
     position: relative;
     width: 75%;
@@ -31,6 +39,7 @@
     text-align: center;
     /* margin-top: 250px; */
     z-index: -1;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .textBox {
@@ -48,6 +57,7 @@
 }
 
 .mainTextBox{
+    /* font-family: Univers; */
     position: absolute;
     width: 65%;
     height: 110px;

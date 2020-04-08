@@ -66,13 +66,12 @@
                   <button class="btn btn-info btn-lg" id="" @click="goToScene(index)"> {{item.text}} </button>
                </div>
 
-               <button v-on:click="typeWriter">Display Text</button>
+               <img class="characterImg" src="images/billy_magic.png">
 
                <div class="textBox mainTextBox" v-on:click="nextScene">
                   <div class="characterName">
                      <p class="characterNameText">{{ scene[current_scene].speaker }}</p></div>
                   <div class="mainText">
-                     {{ scene[current_scene].story }}
                   </div>
                   <div class="arrow-right">
 

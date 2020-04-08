@@ -1,4 +1,5 @@
 #app {
+    position: relative;
     width: 75%;
     height: 55%;
     margin: auto;
@@ -33,6 +34,7 @@
 }
 
 .textBox {
+    position: relative;
     color: white;
     width: 50%;
     border-radius: 20px;
@@ -42,7 +44,24 @@
     padding: 10px;
     text-align: center;
     margin-top: 20px;
-    z-index: -1;
+    z-index: 1;
+}
+
+.mainTextBox{
+    position: absolute;
+    width: 65%;
+    height: 110px;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -350px;
+}
+
+.mainText{
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 14px;
+    margin-right: 14px;
 }
 
 .settingsBtn {
@@ -51,6 +70,7 @@
     margin-left: 10px;
     height: 40px;
     width: 40px;
+    position: absolute;
 }
 
 .settings {
@@ -70,6 +90,7 @@
 }
 
 .overall {
+    position: relative;
     background: #eee;
     border: 1px solid #ccc;
 }
@@ -100,7 +121,7 @@
 }
 
 #gameWindow {
-    /* position: relative; */
+    position: relative;
     background-size: cover;
     height: 650px;
 }
@@ -122,6 +143,7 @@
 }
 
 #currentScreen{
+    position: relative;
     margin-top: 20px;
     margin-bottom: 20px;
 }

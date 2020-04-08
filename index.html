@@ -24,13 +24,13 @@
    <div id='app'>
       <div class="overall">
          
-         <nav class="navbar navbar-default">
+         <!-- <nav class="navbar navbar-default">
             <div class="container">
                <div class="navbar-header">
                   <h3>Dating Simulation: Umich Edition</h3>
                </div>
             </div>
-         </nav>
+         </nav> -->
 
          <div id="currentScreen">
 
@@ -57,13 +57,19 @@
                   <button class="btn btn-primary btn-lg" id="insideSettings" @click="goToMainMenu"> Main Menu </button>
                </div>
 
-               <div class="story">
+               <!-- <div class="story">
                   {{ scene[current_scene].story }}
-               </div>
+               </div> -->
                
                <div class="textBox" v-for="(item, index) in scene[current_scene].button">
                   <!-- <b>{{text}}</b> -->
                   <button class="btn btn-info btn-lg" id="" @click="goToScene(index)"> {{item.text}} </button>
+               </div>
+
+               <div class="textBox mainTextBox">
+                  <div class="mainText">
+                     This is the main story text.
+                  </div>
                </div>
 
                <br>

@@ -14,15 +14,15 @@ var resultView = new Vue({
     background_img: ["images/winter_diag.jpg", "images/1.jpg", "images/2.jpg", "images/3.jpg"],
 
     scene: [
-      {background: 0, story: "this is scene 0", button: [{text: "go to 1", goto: 1}, {text: "go to 2", goto: 2}, {text: "go to 3", goto: 3}]},
-      {background: 1, story: "this is scene 1", button: [{text: "go to 2", goto: 2}, {text: "go to 3", goto: 3}]},
-      {background: 2, story: "this is scene 2", button: [{text: "go to 2", goto: 2}, {text: "go to 3", goto: 3}]},
+      {background: 0, story: "It's another cold day at the University of Michigan. You are a new transfer student from a neighboring school. How will this new environment treat you?", speaker: "Narrator", nextScene: 1},
+      {background: 0, story: "Out of the corner of your eye, you see a person approach you. Who could it be?", speaker: "Narrator", nextScene: 2},
+      {background: 0, story: "Hey! How’s it going? Are you a new student here? I saw you walking around and you looked a bit confused as to where to go.", speaker: "???", nextScene: 3},
       {background: 3, story: "this is scene 3, the final scene", is_final: true},
     ],
 
-    storyText: {
+    // storyText: {
       
-    },
+    // },
 
     current_scene: -1,
 
@@ -57,6 +57,7 @@ var resultView = new Vue({
 
     getBackgroundString() {
       // return "'images/" + this.current_scene + ".jpg'";
+      console.log("'" + this.background_img[this.scene[this.current_scene].background] + "'");
       return "'" + this.background_img[this.current_scene] + "'";
     },
 
@@ -64,6 +65,18 @@ var resultView = new Vue({
       console.log(index);
       console.log(this.scene[this.current_scene].button[index].goto);
       this.current_scene = this.scene[this.current_scene].button[index].goto;
+    },
+
+    nextScene() {
+      if(this.scene[this.current_scene].button === undefined) {
+        console.log('current scene: ' + this.current_scene);
+        console.log('next scene: ' + this.scene[this.current_scene].nextScene);
+        console.log('going to next scene');
+        this.current_scene = this.scene[this.current_scene].nextScene;
+      }
+      else {
+        console.log("click deferred, button options available");
+      }
     },
 
     typeWriter() {

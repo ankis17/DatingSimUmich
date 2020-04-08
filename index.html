@@ -57,9 +57,9 @@
                   <button class="btn btn-primary btn-lg" id="insideSettings" @click="goToMainMenu"> Main Menu </button>
                </div>
 
-               <div class="story">
+               <!-- <div class="story">
                   {{ scene[current_scene].story }}
-               </div>
+               </div> -->
                
                <div class="textBox" v-for="(item, index) in scene[current_scene].button">
                   <!-- <b>{{text}}</b> -->
@@ -68,11 +68,11 @@
 
                <button v-on:click="typeWriter">Display Text</button>
 
-               <div class="textBox mainTextBox">
+               <div class="textBox mainTextBox" v-on:click="nextScene">
                   <div class="characterName">
-                     <p class="characterNameText">{{playerName}}</p></div>
+                     <p class="characterNameText">{{ scene[current_scene].speaker }}</p></div>
                   <div class="mainText">
-                     This is the main story text.
+                     {{ scene[current_scene].story }}
                   </div>
                   <div class="arrow-right">
 

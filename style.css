@@ -81,7 +81,7 @@
 #playerInfo{
     background-image: url("images/umichbackground.jpg");
     background-size: cover;
-    height: 100%;
+    height: 650px;
     width: 100%;
     position: sticky;
     text-align: center;
@@ -99,11 +99,10 @@
     font-size: 40px;
 }
 
-#game_window {
+#gameWindow {
     /* position: relative; */
     background-size: cover;
-    height: 100%;
-    width: 100%;
+    height: 650px;
 }
 
 #mainMenuBtn1,#mainMenuBtn2{

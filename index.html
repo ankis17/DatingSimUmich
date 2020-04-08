@@ -33,6 +33,7 @@
          </nav>
 
          <div id="currentScreen">
+
             <div id="main_menu" v-if="main_menu">
                <p class="title">Umich Dating <br> Simulator!</p>
                <!-- <img id="main_menu_bg" src="https://live.staticflickr.com/8465/8443271796_2034d3e5ce_b.jpg"/> -->
@@ -47,7 +48,7 @@
                <button class="btn btn-danger btn-lg" id="startButton" @click="startGame">Start Simulator!!</button>
 
             </div>
-            <div id="game_window" v-bind:style="{ backgroundImage: 'url(' + getBackgroundString() + ')' }" v-if="game_window">
+            <div id="gameWindow" v-bind:style="{ backgroundImage: 'url(' + getBackgroundString() + ')' }" v-if="game_window">
                <img class="settingsBtn" v-on:click="openSettings" src="images/settingsIcon.webp"/>
 
                <div class="settings" v-if="settingsPanel">
@@ -64,6 +65,9 @@
                   <!-- <b>{{text}}</b> -->
                   <button class="btn btn-info btn-lg" id="" @click="goToScene(index)"> {{item.text}} </button>
                </div>
+
+               <br>
+
             </div>
 
          </div>

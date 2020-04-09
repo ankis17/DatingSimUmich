@@ -14,10 +14,11 @@
 }
 
 #main_menu {
-    position: sticky;
+    position: relative;
     background-image: url("https://live.staticflickr.com/8465/8443271796_2034d3e5ce_b.jpg");
     background-size: cover;
-    height: 100%;
+    /* height: 100%; */
+    height: 650px;
     width: 100%;
     text-align: center;
 }

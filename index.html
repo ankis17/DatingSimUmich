@@ -40,7 +40,7 @@
                <!-- <img id="main_menu_bg" src="https://live.staticflickr.com/8465/8443271796_2034d3e5ce_b.jpg"/> -->
                <button id="mainMenuBtn1" class="btn btn-primary btn-lg" v-on:click="playerInfoPanel"> Start </button>
                <br>
-               <button id="mainMenuBtn2"  class="btn btn-primary btn-lg"> Load Game </button>
+               <!-- <button id="mainMenuBtn2"  class="btn btn-primary btn-lg"> Load Game </button> -->
             </div>
             <div id="playerInfo" v-if="playerInfo">
                <span id="playerInputText">Enter your name:</span>
@@ -54,7 +54,7 @@
 
                <div class="settings" v-if="settingsPanel">
                   <button class="btn btn-primary btn-lg" id="insideSettings" @click="closeSettings"> Resume </button>
-                  <button class="btn btn-primary btn-lg" id="insideSettings"> Save </button>
+                  <!-- <button class="btn btn-primary btn-lg" id="insideSettings"> Save </button> -->
                   <button class="btn btn-primary btn-lg" id="insideSettings" @click="goToMainMenu"> Main Menu </button>
                </div>
 

@@ -67,7 +67,7 @@
                   <button class="btn btn-info btn-lg" id="" @click="goToScene(index)"> {{item.text}} </button>
                </div>
 
-               <img class="characterImg" src="images/billy_magic.png">
+               <img class="characterImg" v-bind:src="getCharacterString()">
 
                <div class="textBox mainTextBox" v-on:click="nextScene">
                   <div class="characterName">

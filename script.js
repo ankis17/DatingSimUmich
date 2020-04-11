@@ -13,6 +13,13 @@
 //   }
 // }, 10);
 
+// function GameScreen(title, href, imageUri, description) {
+//   this.title = title;
+//   this.href = href;
+//   this.imageUri = imageUri;
+//   this.description = description;
+// }
+
 var resultView = new Vue({
   el: '#app',
   data: {
@@ -24,7 +31,7 @@ var resultView = new Vue({
     game_window: false,
     settingsPanel: false,
     playerInfo: false,
-    textScrollSpeed: 10,
+    textScrollSpeed: 15,
     currently_scrolling: false,
 
     background_img: ["images/winter_diag.jpg", "images/cctcbackground.jpg", "images/blueBus.jpg", "images/pierpont.jpg", "images/pierpontPanda.jpg", "images/pandaServing.jpg", "images/pandaCashier.jpg", "images/pandaFood.webp", "images/pandaBag.jpg", "images/outsideFight.png", "images/inFight.png", "images/snowball.jpg", "images/pingpongBBB.jpg", "images/ggbrown.jpg"],

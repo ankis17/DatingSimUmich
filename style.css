@@ -14,6 +14,52 @@
     width: 100%;
     text-align: center;
 }
+#adventure{
+    height: 650px;
+    z-index: -1;
+}
+#central{
+    text-align: center;
+}
+.northCampus,.centralCampus{
+    position: absolute;
+    z-index: 0;
+    height: 295px;
+    width: 100%;
+    
+}
+.centralCampus{
+    margin-top: 60px;
+}
+.northCampus{
+    border-top: 10px solid black;
+    margin-top: 355px;
+}
+
+#advHead{
+    background-color: navy;
+    font-size: 60px;
+    position: relative;
+    z-index: 100;
+    color: yellow;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+#advButton1,#advButton2{
+    
+    position: relative;
+    z-index: 100;
+    height: 90px;
+    width: 300px;
+}
+
+#advButton1{
+   
+    margin-top: 80px;
+}
+#advButton2{
+
+    margin-top: 180px;
+}
 
 .title{
     font-size: 100px;

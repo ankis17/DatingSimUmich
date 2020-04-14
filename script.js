@@ -31,24 +31,29 @@ var resultView = new Vue({
     game_window: false,
     settingsPanel: false,
     playerInfo: false,
+    adventure: false,
     textScrollSpeed: 15,
     currently_scrolling: false,
+    scene:[],
 
     background_img: ["images/winter_diag.jpg", "images/cctcbackground.jpg", "images/blueBus.jpg", "images/pierpont.jpg", "images/pierpontPanda.jpg", "images/pandaServing.jpg", "images/pandaCashier.jpg", "images/pandaFood.webp", "images/pandaBag.jpg", "images/outsideFight.png", "images/inFight.png", "images/snowball.jpg", "images/pingpongBBB.jpg", "images/ggbrown.jpg", "images/markley.jpg"],
     character_img: ["images/billy_magic.png", "images/noCharacter.png", "images/snowballCharacter.png", "images/throwingCharacter.png", "images/bagely.png"],
-    scene: [
-      {background: 14, character: 1, speaker: "Narrator", nextScene: 1, story: "You are a new freshman ready to start your college experience at the University of Michigan. You recently transferred from Ohio State University, a horrifying circus school. You shudder as you remember your first semester, but promise yourself that this time, things will be different."},
-      {background: 14, character: 1, speaker: "Narrator", nextScene: 2, story: "This time, you're determined to meet new people, make new friends... and maybe... even find someone special this cuffing season...?"},
-      {background: 14, character: 1, speaker: "Narrator", nextScene: 3, story: "The thought makes your heartbeat quicken."},
-      {background: 14, character: 1, speaker: "Narrator", nextScene: 4, story: "You can't help but sit back and daydream about all the wonderful people you might end up with. Maybe you might even meet Sasha Obama!"},
-      {background: 14, character: 1, speaker: "Narrator", nextScene: 5, story: "Suddenly, the door behind you opens."},
-      {background: 14, character: 4, speaker: "Bagely", nextScene: 6, story: "\"Hey.\""},
-      {background: 14, character: 4, speaker: "Bagely", nextScene: 7, story: "Bagely's massive 6'7\" frame takes up the entire width of the hallway. His gigantic, hulking musculature smashes entirely through your doorway, flinging dust and rubble all over your room, and leaving a gaping O-shaped hole where your door used to be."},
-      {background: 14, character: 4, speaker: "Bagely", nextScene: 8, story: "\"Whoops, my bad.\""},
-      {background: 14, character: 4, speaker: "Bagely", nextScene: 9, story: "\"Uh. I'm your new roommate.\""},
-      {background: 14, character: 4, speaker: "Bagely", nextScene: 10, story: "(plotline to be continued)"},
-
+    CentralScene: [
+    {background: 14, character: 1, speaker: "Narrator", nextScene: 1, story: "You are a new freshman ready to start your college experience at the University of Michigan. You recently transferred from Ohio State University, a horrifying circus school. You shudder as you remember your first semester, but promise yourself that this time, things will be different."},
+    {background: 14, character: 1, speaker: "Narrator", nextScene: 2, story: "This time, you're determined to meet new people, make new friends... and maybe... even find someone special this cuffing season...?"},
+    {background: 14, character: 1, speaker: "Narrator", nextScene: 3, story: "The thought makes your heartbeat quicken."},
+    {background: 14, character: 1, speaker: "Narrator", nextScene: 4, story: "You can't help but sit back and daydream about all the wonderful people you might end up with. Maybe you might even meet Sasha Obama!"},
+    {background: 14, character: 1, speaker: "Narrator", nextScene: 5, story: "Suddenly, the door behind you opens."},
+    {background: 14, character: 4, speaker: "Bagely", nextScene: 6, story: "\"Hey.\""},
+    {background: 14, character: 4, speaker: "Bagely", nextScene: 7, story: "Bagely's massive 6'7\" frame takes up the entire width of the hallway. His gigantic, hulking musculature smashes entirely through your doorway, flinging dust and rubble all over your room, and leaving a gaping O-shaped hole where your door used to be."},
+    {background: 14, character: 4, speaker: "Bagely", nextScene: 8, story: "\"Whoops, my bad.\""},
+    {background: 14, character: 4, speaker: "Bagely", nextScene: 9, story: "\"Uh. I'm your new roommate.\""},
+    {background: 14, character: 4, speaker: "Bagely", nextScene: 10, story: "(plotline to be continued)"}
+  ],
+    NorthScene: [
       // {background: 0, character: 1, speaker: "Narrator", nextScene: 1, story: "It's another cold day at the University of Michigan. You are a transfer student ready to start your first day at Umich. How will this new environment treat you?"},
+      {background: 0, character: 1, speaker: "Narrator", nextScene: 1, story: "You are a new freshman ready to start your college experience at the University of Michigan. You recently transferred from Ohio State University, a horrifying circus school. You shudder as you remember your first semester, but promise yourself that this time, things will be different."},
+      {background: 0, character: 1, speaker: "Narrator", nextScene: 2, story: "This time, you're determined to meet new people, make new friends... and maybe... even find someone special this cuffing season...?"},
       {background: 0, character: 1, speaker: "Narrator", nextScene: 11, story: "Out of the corner of your eye, you see a person approach you. Who could it be?"},
       {background: 0, character: 0, speaker: "???", nextScene: 12, story: "Hey! How's it going? Are you a new student here? I saw you walking around and you looked a bit confused as to where to go."},
       {background: 0, character: 0, speaker: "You", nextScene: 13, story: "(wow, he looks like he works out a lot) Yeah, this is my first day on campus, so I'm a bit lost. I can't figure out how to get to the STAMPS building. What's your name?"},
@@ -109,10 +114,25 @@ var resultView = new Vue({
       console.log(this.playerName);
     },
 
+    pickAdv(){
+      this.adventure = true;
+      this.playerInfo = false;
+    },
+
+    whichCampus(input){
+      if(input == "North"){
+        this.scene = this.NorthScene;
+      }
+      else{
+        this.scene = this.CentralScene;
+      }
+      this.startGame();
+    },
+
     startGame() {
         console.log(this.playerName);
       this.game_window = true;
-      this.playerInfo = false;
+      this.adventure = false;
       this.current_scene = 0;
 
       // First scene

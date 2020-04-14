@@ -48,11 +48,22 @@
                <!-- <button id="mainMenuBtn2"  class="btn btn-primary btn-lg"> Load Game </button> -->
             </div>
             <div id="playerInfo" v-if="playerInfo">
+               
                <span id="playerInputText">Enter your name:</span>
                <input id="playerInput" type="text" v-model.text = "playerName">
                <br>
-               <button class="btn btn-danger btn-lg" id="startButton" @click="startGame">Start Simulator!!</button>
+               <button class="btn btn-danger btn-lg" id="startButton" @click="pickAdv">Start Simulator!!</button>
 
+            </div>
+            <div id="adventure" v-if="adventure">
+               <img class="centralCampus" src="images/centralBackground.jpg" />
+               <img class="northCampus" src="images/northBackground.jpg" />
+            <div id="central">
+               <h1 id="advHead">Pick your Adventure:</h1>
+               <button class="btn btn-primary btn-lg" id="advButton1" @click="whichCampus('Central')">Central Campus</button>
+               <br>
+               <button class="btn btn-primary btn-lg" id="advButton2" @click="whichCampus('North')">North Campus</button>
+            </div>
             </div>
             <div id="gameWindow" v-bind:style="{ backgroundImage: 'url(' + getBackgroundString() + ')' }" v-if="game_window">
                <img class="settingsBtn" v-on:click="openSettings" src="images/settingsIcon.webp"/>

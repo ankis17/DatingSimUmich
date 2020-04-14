@@ -70,23 +70,23 @@ var resultView = new Vue({
       {background: 4, character: 1, speaker: "Narrator", nextScene: 16, story: "In the corner of your eye, you spot a restaurant called Panda Express. "},
       {background: 4, character: 1, speaker: "You", nextScene: 17, story: "(wow, that looks good! I think I'll eat there)"},
       {background: 5, character: 1, speaker: "Narrator", nextScene: 18, story: "You order a bowl of fried rice and orange chicken and make your way to the checkout."},
-      {background: 6, character: 1, speaker: "Panda Express Employee", nextScene: 19, story: "...Drink? Donation?"},
-      {background: 6, character: 1, speaker: "You", button: [{text: "Yes", goto: 20}, {text: "No", goto: 20}]},
+      {background: 6, character: 1, speaker: "Panda Express Employee", story: "...Drink? Donation?", button: [{text: "Yes", goto: 19}, {text: "No", goto: 20}]},
+      // {background: 6, character: 1, speaker: "You", button: [{text: "Yes", goto: 21}, {text: "No", goto: 22}]},
       {background: 6, character: 1, speaker: "You", nextScene: 21, story: "Sure, round it up please."},
-      {background: 6, character: 1, speaker: "You", nextScene: 22, story: "No thank you."},
-      {background: 7, character: 1, speaker: "You", nextScene: 23, story: "This look so great ... can't wait to dig in!"},
-      {background: 8, character: 1, speaker: "You", nextScene: 24, story: "Wow, what a great meal .. I'm so full, let me pack the rest to go. "},
-      {background: 9, character: 1, speaker: "Narrator", nextScene: 25, story: "You look out of the window to see a snowball fight going on."},
-      {background: 9, character: 1, speaker: "You", nextScene: 26, story: "I still have so much time to kill. Seems like there's a snowball fight going on outside.. Maybe I'll join! "},
-      {background: 10, character: 1, speaker: "Narrator", nextScene: 27, story: "You walk over to the people snowball fighting in front of the BBB"},
-      {background: 10, character: 2, speaker: "Snowball Fight Player", nextScene: 28, story: "Hey, do you want to join us?"},
-      {background: 10, character: 2, speaker: "You", nextScene: 29, story: "Of course!", },
-      {background: 10, character: 3, speaker: "Snowball Fight Player", nextScene: 30, story: "Be careful what you wish for!", },
-      {background: 11, character: 1, speaker: "You", nextScene: 31, story: "Whoa!!", },
-      {background: 10, character: 2, speaker: "Snowball Fight Player", nextScene: 32, story: "Hahhaha, my name is Carton. I'm actually getting pretty cold, do you want to go into the BBB and play some pingpong with me?", },
-      {background: 10, character: 2, speaker: "You", nextScene: 33, story: "Yeah sure", },
-      {background: 12, character: 1, speaker: "You", nextScene: 34, story: "Shoot! I forgot about class!! Sorry Calton, I gotta go ", },
-      {background: 13, character: 1, speaker: "You", nextScene: 35, story: "Ah, finally GG Brown - can't wait to take my first Umich EECS course", },
+      {background: 6, character: 1, speaker: "You", nextScene: 21, story: "No thank you."},
+      {background: 7, character: 1, speaker: "You", nextScene: 22, story: "This look so great ... can't wait to dig in!"},
+      {background: 8, character: 1, speaker: "You", nextScene: 23, story: "Wow, what a great meal .. I'm so full, let me pack the rest to go. "},
+      {background: 9, character: 1, speaker: "Narrator", nextScene: 24, story: "You look out of the window to see a snowball fight going on."},
+      {background: 9, character: 1, speaker: "You", nextScene: 25, story: "I still have so much time to kill. Seems like there's a snowball fight going on outside.. Maybe I'll join! "},
+      {background: 10, character: 1, speaker: "Narrator", nextScene: 26, story: "You walk over to the people snowball fighting in front of the BBB"},
+      {background: 10, character: 2, speaker: "Snowball Fight Player", nextScene: 27, story: "Hey, do you want to join us?"},
+      {background: 10, character: 2, speaker: "You", nextScene: 28, story: "Of course!", },
+      {background: 10, character: 3, speaker: "Snowball Fight Player", nextScene: 29, story: "Be careful what you wish for!", },
+      {background: 11, character: 1, speaker: "You", nextScene: 30, story: "Whoa!!", },
+      {background: 10, character: 2, speaker: "Snowball Fight Player", nextScene: 31, story: "Hahhaha, my name is Carton. I'm actually getting pretty cold, do you want to go into the BBB and play some pingpong with me?", },
+      {background: 10, character: 2, speaker: "You", nextScene: 32, story: "Yeah sure", },
+      {background: 12, character: 1, speaker: "You", nextScene: 33, story: "Shoot! I forgot about class!! Sorry Calton, I gotta go ", },
+      {background: 13, character: 1, speaker: "You", nextScene: 34, story: "Ah, finally GG Brown - can't wait to take my first Umich EECS course", },
     ],
 
     // storyText: {
@@ -165,6 +165,7 @@ var resultView = new Vue({
       console.log(index);
       console.log(this.scene[this.current_scene].button[index].goto);
       this.current_scene = this.scene[this.current_scene].button[index].goto;
+      this.typeWriter(this.scene[this.current_scene]['story']);
     },
 
     nextScene() {

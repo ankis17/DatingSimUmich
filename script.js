@@ -26,7 +26,7 @@ var resultView = new Vue({
     text: "any text",
     backgroundImgStr: "",
     playerImgStr: "",
-    playerName:"Your Name Here",
+    playerName:"",
     main_menu: true,
     game_window: false,
     settingsPanel: false,
@@ -115,8 +115,13 @@ var resultView = new Vue({
     },
 
     pickAdv(){
-      this.adventure = true;
-      this.playerInfo = false;
+      if (this.playerName === "") {
+        alert("Name cannot be empty");
+      }
+      else {
+        this.adventure = true;
+        this.playerInfo = false;
+      }
     },
 
     whichCampus(input){

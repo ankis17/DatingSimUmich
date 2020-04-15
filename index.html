@@ -28,6 +28,8 @@
 <body>
 
    <div id='app'>
+      <audio id="audio-jazz" src="music/Jazz.mp3"></audio>
+
       <div class="overall">
          
          <nav class="navbar navbar-default">
@@ -87,7 +89,7 @@
 
                <div class="textBox mainTextBox" v-on:click="nextScene">
                   <div class="characterName">
-                     <p class="characterNameText">{{ scene[current_scene].speaker }}</p></div>
+                     <p class="characterNameText">{{ scene[current_scene].speaker || playerName }}</p></div>
                   <div class="mainText">
                   </div>
                   <div class="arrow-right">

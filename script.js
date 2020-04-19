@@ -20,7 +20,7 @@ var resultView = new Vue({
  
 
     background_img: ["images/winter_diag.jpg", "images/cctcbackground.jpg", "images/blueBus.jpg", "images/black.jpg", "images/markley.jpg", "images/squad.png", "images/dark_and_snowy.jpg", "images/frat_house_outside.jpg", "images/frat_interior.png"],
-    character_img: ["images/billy_magic.png", "images/noCharacter.png", "images/snowballCharacter.png", "images/throwingCharacter.png", "images/bagely.png"],
+    character_img: ["images/billy_magic.png", "images/noCharacter.png", "images/snowballCharacter.png", "images/throwingCharacter.png", "images/bagely.png", "images/charlie.png", "images/fat_mac.png", "images/dennis.png"],
     CentralScene: [
     {background: 4, character: 1, speaker: "Narrator", nextScene: 1, story: "You are a new freshman ready to start your college experience at the University of Michigan. You recently transferred from Ohio State University, a horrifying circus school. You shudder as you remember your first semester, but promise yourself that this time, things will be different."},
     {background: 4, character: 1, speaker: "Narrator", nextScene: 2, story: "This time, you're determined to meet new people, make new friends... and maybe... even find someone special this cuffing season...?"},
@@ -119,8 +119,8 @@ var resultView = new Vue({
     {background: 8, character: 0, speaker: "Billy Magic", nextScene: 95, story: "\"I think... I really like you...!\"", button: [{text: "Lean in for a kiss...", goto: 95, character_pt: 1}, {text: "“Oh… I think you’ve had too much, Billy.”", goto: 96, character_pt: false}]},
     {background: 8, character: 0, speaker: "Narrator", nextScene: 97, story: "You lean in closer to Billy..."},
     {background: 8, character: 0, speaker: "Narrator", nextScene: 97, story: "Billy looks disappointed, but understanding. "},
-    {background: 8, character: 7, speaker: "Brother", nextScene: 98, story: "“BRO, DPSS!”"},
-    {background: 8, character: 8, speaker: "Narrator", nextScene: 99, story: "DPSS barges into the room with riot shields. Screaming freshmen sprint out the back door as squads of heavily-geared officers flood the dance floor. Luckily, you are 25, and not underage. "},
+    {background: 8, character: 6, speaker: "Brother", nextScene: 98, story: "“BRO, DPSS!”"},
+    {background: 8, character: 1, speaker: "Narrator", nextScene: 99, story: "DPSS barges into the room with riot shields. Screaming freshmen sprint out the back door as squads of heavily-geared officers flood the dance floor. Luckily, you are 25, and not underage. "},
     {background: 8, character: 0, speaker: "Billy Magic", nextScene: 100, story: "“Ah crap. I guess we gotta get out of here.”"},
     {background: 7, character: 1, speaker: "Narrator", nextScene: 101, story: "You and Billy call Ubers and return to your dorms. "},
     {background: 4, character: 1, speaker: "Narrator", nextScene: 106, story: "After a long night of partying, you go home and fall asleep."},

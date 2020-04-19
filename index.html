@@ -29,6 +29,7 @@
 
    <div id='app'>
       <audio controls loop id="audio-jazz" src="music/Jazz.mp3"></audio>
+      <audio controls loop id="audio-mobamba" src="music/MoBamba.ogg"></audio>
 
       <div class="overall">
          
@@ -80,9 +81,8 @@
                   {{ scene[current_scene].story }}
                </div> -->
                
-               <div class="textBox" v-for="(item, index) in scene[current_scene].button">
-                  <!-- <b>{{text}}</b> -->
-                  <button class="btn btn-info btn-lg" id="" @click="goToScene(index)"> {{item.text}} </button>
+               <div class="textBox choiceBox" v-for="(item, index) in scene[current_scene].button">
+                  <button class="btn btn-info btn-lg" id="" @click="goToScene(index, item.character_pt, item.special_scene)"> {{item.text}} </button>
                </div>
 
                <img class="characterImg" v-bind:src="getCharacterString()">

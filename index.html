@@ -28,11 +28,12 @@
 <body>
 
    <div id='app'>
-      <audio controls loop id="audio-jazz" src="music/Jazz.mp3"></audio>
-      <audio controls loop id="audio-mobamba" src="music/MoBamba.mp3"></audio>
-
+      
       <div class="overall">
-         
+            <div id="audioControls"  v-show="audioSettings">
+                  <audio controls loop id="audio-jazz" src="music/Jazz.mp3"></audio> 
+                  <audio controls loop id="audio-mobamba" src="music/MoBamba.mp3"></audio>
+            </div>
          <!-- <nav class="navbar navbar-default">
             <div class="container">
                <div class="navbar-header">
@@ -40,7 +41,7 @@
                </div>
             </div>
          </nav> -->
-
+         
          <div id="currentScreen">
 
             <div id="main_menu" v-if="main_menu">
@@ -69,11 +70,12 @@
             </div>
             </div> -->
             <div id="gameWindow" v-bind:style="{ backgroundImage: 'url(' + getBackgroundString() + ')' }" v-if="game_window">
-               <img class="settingsBtn" v-on:click="openSettings" src="images/settingsIcon.webp"/>
-
+               <img class="settingsBtn" v-on:click="openSettings" v-on:mouseover="turnRed" v-on:mouseleave="turnBack" v-if="settingsButton" src="images/settingsIcon.webp"/>
+               
                <div class="settings" v-if="settingsPanel">
                   <button class="btn btn-primary btn-lg" id="insideSettings" @click="closeSettings"> Resume </button>
                   <!-- <button class="btn btn-primary btn-lg" id="insideSettings"> Save </button> -->
+                  <button class="btn btn-primary btn-lg" id="insideSettings" @click="audioChange"> Adjust Volume </button>
                   <button class="btn btn-primary btn-lg" id="insideSettings" @click="goToMainMenu"> Main Menu </button>
                </div>
 

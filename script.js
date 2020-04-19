@@ -8,6 +8,7 @@ var resultView = new Vue({
     main_menu: true,
     game_window: false,
     settingsPanel: false,
+    settingsButton: true,
     playerInfo: false,
     adventure: false,
     textScrollSpeed: 15,
@@ -15,6 +16,8 @@ var resultView = new Vue({
     scene:[],
     billyPts: 0,
     bagelyPts: 0,
+    audioSettings: false,
+ 
 
     background_img: ["images/winter_diag.jpg", "images/cctcbackground.jpg", "images/blueBus.jpg", "images/black.jpg", "images/markley.jpg", "images/squad.png", "images/dark_and_snowy.jpg", "images/frat_house_outside.jpg", "images/frat_interior.png"],
     character_img: ["images/billy_magic.png", "images/noCharacter.png", "images/snowballCharacter.png", "images/throwingCharacter.png", "images/bagely.png"],
@@ -148,10 +151,13 @@ var resultView = new Vue({
     
     openSettings: function () {
       this.settingsPanel = !this.settingsPanel;
+      this.settingsButton = false;
     },
 
     closeSettings() {
+      this.audioSettings = false;
       this.settingsPanel = false;
+      this.settingsButton = true;
     },
 
     playerInfoPanel() {
@@ -182,12 +188,15 @@ var resultView = new Vue({
       this.startGame();
     },
 
+    
+
     startGame() {
       if (this.playerName === "") {
         alert("Name cannot be empty");
         return;
       }
       // this.adventure = false;
+      this.settingsButton = true;
       this.playerInfo = false;
       this.playMusic();
       this.scene = this.CentralScene;
@@ -197,12 +206,37 @@ var resultView = new Vue({
       // First scene
       this.typeWriter(this.scene[0]['story']);
     },
-
+    turnRed(){
+      console.log("here");
+      $('.settingsBtn').css('background-color', 'red');
+    },
+    turnBack(){
+      console.log("here");
+      $('.settingsBtn').css('background-color', ' rgb(177, 177, 187)');
+    },
     goToMainMenu() {
-      this.settingsPanel = false;
-      this.game_window = false;
-      this.main_menu = true;
-      this.current_scene = -1;
+      if (confirm('Are you sure you want to go back to the Main Menu? All progress will be lost.')) {
+        // Save it!
+        this.settingsPanel = false;
+        this.game_window = false;
+        this.main_menu = true;
+        this.current_scene = -1;
+        var jazzMusic = document.getElementById("audio-jazz");
+        jazzMusic.pause();
+        var music = document.getElementById("audio-mobamba");
+        music.pause();
+        
+      } 
+      else {
+        // Do nothing!
+        
+       
+      }
+      
+    },
+
+    audioChange() {
+      this.audioSettings = true;
     },
 
     getBackgroundString() {

@@ -1,25 +1,3 @@
-// var addChars = setInterval(function(txt, curr_txt, currently_scrolling) {
-//   let i = 0;
-//   // _this.currently_scrolling = true;
-//   if (i < txt.length) {
-//     curr_txt += txt.charAt(i);
-//     $(".mainText").text(curr_txt);
-//     i++;
-//   }
-//   else {
-//     // _this.currently_scrolling = false;
-//     currently_scrolling = false;
-//     clearInterval(addChars);
-//   }
-// }, 10);
-
-// function GameScreen(title, href, imageUri, description) {
-//   this.title = title;
-//   this.href = href;
-//   this.imageUri = imageUri;
-//   this.description = description;
-// }
-
 var resultView = new Vue({
   el: '#app',
   data: {
@@ -146,56 +124,17 @@ var resultView = new Vue({
     {background: 6, character: 0, speaker: "Narrator", nextScene: 103, story: "Billy's face falls. He makes a sad bus sound."},
     {background: 6, character: 0, speaker: "Billy Magic", nextScene: 104, story: "\"Oh. Alright then. Maybe another time.\""},
     {background: 4, character: 1, speaker: "Narrator", nextScene: 105, story: "You go back to your dorm to an uneventful night."},
-    {background: 4, character: 1, speaker: "Narrator", nextScene: 106, story: "It’s the weekend. There must be something fun to do! You see a post online for the Yost Ice Skating arena."},
-    {background: 4, character: 1, speaker: "Narrator", story: "Who do you want to go Ice Skating with?", button: [{text: "Billy", goto: 107, character_pt: 1}, {text: "Bagely", goto: 43, character_pt: 2}]},
-    {background: 14, character: 4, speaker: "", nextScene: 108, story: "“BRO, DPSS!”"},
-    {background: 14, character: 4, speaker: "", nextScene: 98, story: "“BRO, DPSS!”"},
-    {background: 14, character: 4, speaker: "", nextScene: 98, story: "“BRO, DPSS!”"},
-    {background: 14, character: 4, speaker: "", nextScene: 98, story: "“BRO, DPSS!”"},
+    {background: 3, character: 1, speaker: "...", nextScene: 106, story: "..."},
+    {background: 4, character: 1, speaker: "Narrator", nextScene: 107, story: "It’s the weekend. You see a post online for the Yost Ice Skating arena."},
+    {background: 4, character: 1, speaker: "Narrator", nextScene: 108, story: "You've met a great guy and a great bagel this week. But you can only ask one of them out."},
+    {background: 4, character: 1, speaker: "Narrator", story: "Who do you want to go Ice Skating with?", button: [{text: "Billy", goto: 108, character_pt: false}, {text: "Bagely", goto: 43, character_pt: false}]},
+    {background: 14, character: 4, speaker: "", nextScene: 109, story: "You give Billy a call."},
+    {background: 14, character: 4, speaker: "", nextScene: 110, story: "\""},
+    {background: 14, character: 4, speaker: "", nextScene: 111, story: "“”"},
+    {background: 14, character: 4, speaker: "", nextScene: 112, story: "“”"},
     
-
-
-
-
   ],
-    NorthScene: [
-      // {background: 0, character: 1, speaker: "Narrator", nextScene: 1, story: "It's another cold day at the University of Michigan. You are a transfer student ready to start your first day at Umich. How will this new environment treat you?"},
-      {background: 0, character: 1, speaker: "Narrator", nextScene: 1, story: "You are a new freshman ready to start your college experience at the University of Michigan. You recently transferred from Ohio State University, a horrifying circus school. You shudder as you remember your first semester, but promise yourself that this time, things will be different."},
-      {background: 0, character: 1, speaker: "Narrator", nextScene: 2, story: "This time, you're determined to meet new people, make new friends... and maybe... even find someone special this cuffing season...?"},
-      {background: 0, character: 1, speaker: "Narrator", nextScene: 3, story: "Out of the corner of your eye, you see a person approach you. Who could it be?"},
-      {background: 0, character: 0, speaker: "???", nextScene: 4, story: "Hey! How's it going? Are you a new student here? I saw you walking around and you looked a bit confused as to where to go."},
-      {background: 0, character: 0, speaker: "", nextScene: 5, story: "(wow, he looks like he works out a lot) Yeah, this is my first day on campus, so I'm a bit lost. I can't figure out how to get to the STAMPS building. What's your name?"},
-      {background: 0, character: 0, speaker: "Billy", nextScene: 6, story: "I'm Billy Magic-"},
-      {background: 0, character: 0, speaker: "Unknown Voice", nextScene: 7, story: "BILLY MAGIC"},
-      {background: 0, character: 0, speaker: "Billy", nextScene: 8, story: "-an upperclassman here at Michigan! Let me introduce you to… Magic Bus!"},
-      {background: 0, character: 0, speaker: "", nextScene: 9, story: "(where did that loud voice come from? weird.)"},
-      {background: 1, character: 0, speaker: "Billy", nextScene: 10, story: "This is the Central Campus Transit Center, also known as CC Little. All the blue buses, which are the university buses that take you around campus, stop here. And, they're free!"},
-      {background: 1, character: 0, speaker: "", nextScene: 11, story: "Nice to meet you Billy. That's the bus system right? Which one should I take to get to north campus?"},
-      {background: 1, character: 0, speaker: "Billy", nextScene: 12, story: "Well, you have a lot of options. I would recommend Bursley-Baits or Northwood, those are usually the fastest, you can always check the app Magic Bus to see which one is arriving soonest - definitely useful in these cold times! Anyways, I've got to head to a bus convention soon, but let's meet up again later so I can show you around a bit more! *wink*"},
-      {background: 1, character: 0, speaker: "", nextScene: 13, story: "Thanks a lot Billy, I'll see you later!"},
-      {background: 2, character: 1, speaker: "Narrator", nextScene: 14, story: "You get on Bursley-Baits and find yourself a seat. After a rather uneventful ride, you find yourself on North Campus."},
-      {background: 3, character: 1, speaker: "", nextScene: 15, story: "(hmm, I have a lot of time before my first class, and I'm kind of hungry, maybe I should get some food)"},
-      {background: 4, character: 1, speaker: "Narrator", nextScene: 16, story: "In the corner of your eye, you spot a restaurant called Panda Express. "},
-      {background: 4, character: 1, speaker: "", nextScene: 17, story: "(wow, that looks good! I think I'll eat there)"},
-      {background: 5, character: 1, speaker: "Narrator", nextScene: 18, story: "You order a bowl of fried rice and orange chicken and make your way to the checkout."},
-      {background: 6, character: 1, speaker: "Panda Express Employee", story: "...Drink? Donation?", button: [{text: "Yes", goto: 19}, {text: "No", goto: 20}]},
-      // {background: 6, character: 1, speaker: "You", button: [{text: "Yes", goto: 21}, {text: "No", goto: 22}]},
-      {background: 6, character: 1, speaker: "", nextScene: 21, story: "Sure, round it up please."},
-      {background: 6, character: 1, speaker: "", nextScene: 21, story: "No thank you."},
-      {background: 7, character: 1, speaker: "", nextScene: 22, story: "This look so great ... can't wait to dig in!"},
-      {background: 8, character: 1, speaker: "", nextScene: 23, story: "Wow, what a great meal .. I'm so full, let me pack the rest to go. "},
-      {background: 9, character: 1, speaker: "Narrator", nextScene: 24, story: "You look out of the window to see a snowball fight going on."},
-      {background: 9, character: 1, speaker: "", nextScene: 25, story: "I still have so much time to kill. Seems like there's a snowball fight going on outside.. Maybe I'll join! "},
-      {background: 10, character: 1, speaker: "Narrator", nextScene: 26, story: "You walk over to the people snowball fighting in front of the BBB"},
-      {background: 10, character: 2, speaker: "Snowball Fight Player", nextScene: 27, story: "Hey, do you want to join us?"},
-      {background: 10, character: 2, speaker: "", nextScene: 28, story: "Of course!", },
-      {background: 10, character: 3, speaker: "Snowball Fight Player", nextScene: 29, story: "Be careful what you wish for!", },
-      {background: 11, character: 1, speaker: "", nextScene: 30, story: "Whoa!!", },
-      {background: 10, character: 2, speaker: "Snowball Fight Player", nextScene: 31, story: "Hahhaha, my name is Carton. I'm actually getting pretty cold, do you want to go into the BBB and play some pingpong with me?", },
-      {background: 10, character: 2, speaker: "", nextScene: 32, story: "Yeah sure", },
-      {background: 12, character: 1, speaker: "", nextScene: 33, story: "Shoot! I forgot about class!! Sorry Calton, I gotta go ", },
-      {background: 13, character: 1, speaker: "", nextScene: 34, story: "Ah, finally GG Brown - can't wait to take my first Umich EECS course", },
-    ],
+
 
     // storyText: {
       
@@ -244,9 +183,15 @@ var resultView = new Vue({
     },
 
     startGame() {
-        console.log(this.playerName);
+      if (this.playerName === "") {
+        alert("Name cannot be empty");
+        return;
+      }
+      // this.adventure = false;
+      this.playerInfo = false;
+      this.playMusic();
+      this.scene = this.CentralScene;
       this.game_window = true;
-      this.adventure = false;
       this.current_scene = 0;
 
       // First scene
@@ -304,7 +249,7 @@ var resultView = new Vue({
         music.volume = 0.3;
         music.play();
       }
-      if (this.current_scene === 104) {
+      if (this.current_scene === 105) {
         var music = document.getElementById("audio-mobamba");
         music.pause();
 

@@ -29,17 +29,17 @@
 
    <div id='app'>
       <audio controls loop id="audio-jazz" src="music/Jazz.mp3"></audio>
-      <audio controls loop id="audio-mobamba" src="music/MoBamba.ogg"></audio>
+      <audio controls loop id="audio-mobamba" src="music/MoBamba.mp3"></audio>
 
       <div class="overall">
          
-         <nav class="navbar navbar-default">
+         <!-- <nav class="navbar navbar-default">
             <div class="container">
                <div class="navbar-header">
                   <h3>Dating Simulation: Umich Edition</h3>
                </div>
             </div>
-         </nav>
+         </nav> -->
 
          <div id="currentScreen">
 
@@ -52,13 +52,13 @@
             </div>
             <div id="playerInfo" v-if="playerInfo">
                
-               <span id="playerInputText">Enter your name:</span>
+               <span id="playerInputText">Enter your name:   </span>
                <input id="playerInput" type="text" v-model.text = "playerName" placeholder="Your Name Here">
                <br>
-               <button class="btn btn-danger btn-lg" id="startButton" @click="pickAdv">Start Simulator!!</button>
+               <button class="btn btn-danger btn-lg" id="startButton" @click="startGame">Start Game!</button>
 
             </div>
-            <div id="adventure" v-if="adventure">
+            <!-- <div id="adventure" v-if="adventure">
                <img class="centralCampus" src="images/centralBackground.jpg" />
                <img class="northCampus" src="images/northBackground.jpg" />
             <div id="central">
@@ -67,7 +67,7 @@
                <br>
                <button class="btn btn-primary btn-lg" id="advButton2" @click="whichCampus('North')">North Campus</button>
             </div>
-            </div>
+            </div> -->
             <div id="gameWindow" v-bind:style="{ backgroundImage: 'url(' + getBackgroundString() + ')' }" v-if="game_window">
                <img class="settingsBtn" v-on:click="openSettings" src="images/settingsIcon.webp"/>
 

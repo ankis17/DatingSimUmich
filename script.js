@@ -19,7 +19,7 @@ var resultView = new Vue({
     audioSettings: false,
  
 
-    background_img: ["images/winter_diag.jpg", "images/cctcbackground.jpg", "images/blueBus.jpg", "images/black.jpg", "images/markley.jpg", "images/squad.png", "images/dark_and_snowy.jpg", "images/frat_house_outside.jpg", "images/frat_interior.png"],
+    background_img: ["images/winter_diag.jpg", "images/cctcbackground.jpg", "images/blueBus.jpg", "images/black.jpg", "images/markley.jpg", "images/squad.png", "images/dark_and_snowy.jpg", "images/frat_house_outside.jpg", "images/frat_interior.png", "images/yost.jpeg"],
     character_img: ["images/billy_magic.png", "images/noCharacter.png", "images/snowballCharacter.png", "images/throwingCharacter.png", "images/bagely.png", "images/charlie.png", "images/fat_mac.png", "images/dennis.png"],
     CentralScene: [
     {background: 4, character: 1, speaker: "Narrator", nextScene: 1, story: "You are a new freshman ready to start your college experience at the University of Michigan. You recently transferred from Ohio State University, a horrifying circus school. You shudder as you remember your first semester, but promise yourself that this time, things will be different."},
@@ -130,11 +130,22 @@ var resultView = new Vue({
     {background: 3, character: 1, speaker: "...", nextScene: 106, story: "..."},
     {background: 4, character: 1, speaker: "Narrator", nextScene: 107, story: "It’s the weekend. You see a post online for the Yost Ice Skating arena."},
     {background: 4, character: 1, speaker: "Narrator", nextScene: 108, story: "You've met a great guy and a great bagel this week. But you can only ask one of them out."},
-    {background: 4, character: 1, speaker: "Narrator", story: "Who do you want to go Ice Skating with?", button: [{text: "Billy", goto: 108, character_pt: false}, {text: "Bagely", goto: 43, character_pt: false}]},
-    {background: 14, character: 4, speaker: "", nextScene: 109, story: "You give Billy a call."},
-    {background: 14, character: 4, speaker: "", nextScene: 110, story: "\""},
-    {background: 14, character: 4, speaker: "", nextScene: 111, story: "“”"},
-    {background: 14, character: 4, speaker: "", nextScene: 112, story: "“”"},
+    {background: 4, character: 1, speaker: "Narrator", story: "Who do you want to go Ice Skating with?", button: [{text: "Billy", goto: 109, character_pt: false}, {text: "Bagely", goto: 116, character_pt: false}]},
+    {background: 4, character: 1, speaker: "Narrator", nextScene: 110, story: "You call up Billy and ask them to go ice skating with you."},
+    {background: 4, character: 0, speaker: "Billy Magic", nextScene: 111, story: "I’d love to!"},
+    {background: 9, character: 0, speaker: "Narrator", nextScene: 112, story: "You and Billy arrive at the Yost Ice Arena. Time for some fun!"},
+    {background: 9, character: 0, speaker: "Billy Magic", nextScene: 113, story: "I’m really glad to have met you. These last few days have been pretty fun."},
+    {background: 9, character: 0, speaker: "Narrator", nextScene: 114, story: "As the two of you skate around the rink, you feel warm inside despite the cold Michigan weather. It’s only been a week since you arrived on campus, but you already feel like part of the UMich community! "},
+    {background: 9, character: 0, speaker: "Narrator", nextScene: 114, story: "As you skate one final lap around the rink, you and Billy make eye contact and you can’t help but smile. Who knows what the future will hold? (GOOD END) [Return to Main Menu in the Settings to play again.]"},
+    {background: 4, character: 0, speaker: "Billy Magic", nextScene: 115, story: "Oh sorry... I think I’ve already got plans. Maybe another time... (BAD END) [Return to Main Menu in the Settings to play again.]"},
+    {background: 4, character: 1, speaker: "Narrator", nextScene: 117, story: "You call up Bagely and ask them to go ice skating with you."},
+    {background: 4, character: 4, speaker: "Bagely", nextScene: 118, story: "I’d love to!"},
+    {background: 9, character: 4, speaker: "Narrator", nextScene: 119, story: "You and Bagely arrive at the Yost Ice Arena. Time for some fun!"},
+    {background: 9, character: 4, speaker: "Bagely", nextScene: 120, story: "I’m really glad to have met you. These last few days have been pretty fun."},
+    {background: 9, character: 4, speaker: "Narrator", nextScene: 121, story: "As the two of you skate around the rink, you feel warm inside despite the cold Michigan weather. It’s only been a week since you arrived on campus, but you already feel like part of the UMich community! "},
+    {background: 9, character: 4, speaker: "Narrator", nextScene: 121, story: "As you skate one final lap around the rink, you and Bagely make eye contact and you can’t help but smile. Who knows what the future will hold? (GOOD END) [Return to Main Menu in the Settings to play again.]"},
+    {background: 4, character: 4, speaker: "Bagely", nextScene: 122, story: "Oh sorry... I think I’ve already got plans. Maybe another time... (BAD END) [Return to Main Menu in the Settings to play again.]"},
+    
     
   ],
 
@@ -207,11 +218,9 @@ var resultView = new Vue({
       this.typeWriter(this.scene[0]['story']);
     },
     turnRed(){
-      console.log("here");
       $('.settingsBtn').css('background-color', 'red');
     },
     turnBack(){
-      console.log("here");
       $('.settingsBtn').css('background-color', ' rgb(177, 177, 187)');
     },
     goToMainMenu() {
@@ -276,20 +285,37 @@ var resultView = new Vue({
     nextScene() {
       // play mo bamba 
       if (this.current_scene === 83) {
-        var jazzMusic = document.getElementById("audio-jazz");
+        let jazzMusic = document.getElementById("audio-jazz");
         jazzMusic.pause();
 
-        var music = document.getElementById("audio-mobamba");
+        let music = document.getElementById("audio-mobamba");
         music.volume = 0.3;
         music.play();
       }
       if (this.current_scene === 105) {
-        var music = document.getElementById("audio-mobamba");
+        let music = document.getElementById("audio-mobamba");
         music.pause();
 
-        var jazzMusic = document.getElementById("audio-jazz");
+        let jazzMusic = document.getElementById("audio-jazz");
         jazzMusic.volume = 0.2;
         jazzMusic.play();
+      }
+      // Billy Ending
+      if (this.current_scene === 109) {
+        if (this.billyPts >= 3) {
+          this.scene[this.current_scene].nextScene = 111;
+        }
+        else {
+          this.scene[this.current_scene].nextScene = 115;
+        }
+      }
+      if (this.current_scene === 116) {
+        if (this.bagelyPts >= 2) {
+          this.scene[this.current_scene].nextScene = 117;
+        }
+        else {
+          this.scene[this.current_scene].nextScene = 122;
+        }
       }
       // If text is currently scrolling, clicking the textbox again will show the entire 
       if (this.currently_scrolling) {
@@ -299,9 +325,6 @@ var resultView = new Vue({
         return;
       }
       if(this.scene[this.current_scene].button === undefined) {
-        console.log('current scene: ' + this.current_scene);
-        console.log('next scene: ' + this.scene[this.current_scene].nextScene);
-        console.log('going to next scene');
         this.current_scene = this.scene[this.current_scene].nextScene;
         this.typeWriter(this.scene[this.current_scene]['story']);
       }

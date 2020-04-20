@@ -229,6 +229,7 @@ var resultView = new Vue({
         this.settingsPanel = false;
         this.game_window = false;
         this.main_menu = true;
+        this.audioSettings = false;
         this.current_scene = -1;
         var jazzMusic = document.getElementById("audio-jazz");
         jazzMusic.pause();
